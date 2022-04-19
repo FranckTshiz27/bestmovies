@@ -1,0 +1,102 @@
+.serial {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(
+    90deg,
+    rgb(14, 26, 51) 11%,
+    rgba(14, 25, 48, 0.7685324618128502) 45%,
+    rgba(7, 13, 24, 0.253) 95%
+  ), center center;
+  box-sizing: border-box;
+  .serial__banner {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    z-index: 5;
+
+    .serial__banner__title {
+      color: #fff;
+      font-size: 30px;
+      padding-bottom: 10px;
+      &:after {
+        content: "";
+        height: 8px;
+        width: 120px;
+        position: absolute;
+        transform: translate(-105%, 50px);
+        background: linear-gradient(
+          60deg,
+          rgba($primaryColor, 1) 50%,
+          #fff 50%
+        );
+      }
+    }
+    .categories__container {
+     
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 80%;
+      margin-top: 10px;
+
+      button {
+        border: 1px solid $primaryColor;
+        color: #fff;
+        background: rgba($primaryColor, 0.3);
+        font-size: 15px;
+        margin: 5px;
+        width: 150px;
+        padding: 8px 0px;
+        transition: 2s all;
+
+        &:hover {
+          background-color: $primaryColor;
+          cursor: pointer;
+          color: #fff !important;
+        }
+      }
+      .active_category{
+        background-color: $primaryColor;
+        cursor: pointer;
+        color: #fff !important;
+        border: 1px solid #fff;
+      }
+      .button-selected{
+        background-color: $primaryColor;
+        cursor: pointer;
+        color: #fff !important;
+      }
+
+    }
+  }
+  .serial__selectedCategory-container {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0px 0px;
+    width: 76%;
+    .serial__selectedCategory {
+      text-align: left;
+      text-transform: uppercase;
+      color: $primaryColor;
+      font-size: 20px;
+      border-bottom: 3px solid rgba($primaryColor, 1);
+    }
+  }
+
+  .serial__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    margin: 10px 40px;
+    padding-bottom: 30px;
+  }
+}

@@ -1,0 +1,115 @@
+@import "variables.scss";
+.header__nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  font-family:$primaryFont;
+  box-sizing: border-box;
+
+  button {
+    border: 0px;
+    display: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    .fa-bars,
+    .fa-times {
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+
+  .header__nav__ul {
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    li {
+      height: 100%;
+
+      .li__a {
+        display: flex;
+        align-items: center;
+        height: 95%;
+        text-decoration: none;
+        margin: 0px 5px;
+        font-size: 0.9em;
+        cursor: pointer;
+        padding: 10px;
+        color: inherit;
+        font-weight: 400;
+        box-sizing: border-box;
+        &:hover {
+          background-color: rgba($color: #fff, $alpha: 0.1);
+          // color: rgba($color: $primaryColor, $alpha: 1);
+        }
+      }
+    }
+  }
+}
+
+.active1 {
+  // color: rgba($color: $primaryColor, $alpha: 1) !important;
+  font-weight: 700;
+  background-color: rgba($color: #fff, $alpha: 0.1);
+  border-bottom: 1px solid $primaryColor;
+  font-size: 0.1em;
+  padding: 2px;
+  box-sizing: border-box;
+}
+@media all and (max-width: 768px) {
+  .header__nav {
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+
+    button {
+      border: 0px;
+      display: flex;
+      background-color: transparent;
+      .fa-bars {
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+
+    .header__nav__ul {
+      z-index: 5;
+      margin-top: 100px;
+      margin-left: -60px;
+      width: 100px;
+      background-color: $secondaryColor;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: absolute;
+
+      li {
+        .li__a {
+          z-index: 5;
+          display: flex;
+          align-items: center;
+          height: 95%;
+          color: #fff;
+          text-decoration: none;
+          margin: 0px 5px;
+          font-size: 16px;
+          cursor: pointer;
+          padding: 10px;
+          &:hover {
+            background-color: rgba($color: #fff, $alpha: 0.3);
+            color: $primaryColor !important;
+          }
+        }
+      }
+    }
+  }
+}

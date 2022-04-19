@@ -1,0 +1,94 @@
+
+import React,{useState,useEffect}  from 'react';
+import Logo from './Logo';
+// import InputFilterLight from '../InputFilterLight';
+import {NavLink} from 'react-router-dom';
+import { FaSistrix } from "react-icons/fa";
+import { useHistory } from 'react-router-dom';
+import {useInputFilterLight} from '../../hooks/fetchHooks';
+import {searchContext, SearchProvider} from '../../context/SearchContext';
+import { useContext } from 'react';
+
+
+
+function  NavBar()
+{
+  const [start,setStart] = useState(false)
+  const [visibility,setVisibility]= useState(true);
+  const [isSearching,setIsSearching]= useContext(searchContext);
+  const searchBar = useInputFilterLight(isSearching,start)
+
+  let iconStyles = { color: "#2ba6cb", fontSize: "1.2em",cursor:"pointer"};
+
+  
+const handleClick = ()=>{
+ 
+  setIsSearching(!isSearching)
+  if (start===false) 
+      setStart(true)
+}
+
+const onClick = ()=>{
+  setIsSearching(false)
+}
+
+    const menu =()=>{
+      const show =visibility? 
+      <div>
+        <div  className="header__nav__ul">
+      
+                          <li>
+                            <NavLink className="li__a" exact to="/" activeClassName="active1" onClick={onClick}>HOME</NavLink>
+                          </li>
+                          <li>
+                            <NavLink to ="/movies" className="li__a" activeClassName="active1" onClick={onClick}>MOVIES</NavLink>
+                          </li>
+                          <li>
+                            <NavLink to="/tvShows" className="li__a" activeClassName="active1" onClick={onClick}>TV SHOWS</NavLink>
+                          </li>
+                        
+                          {searchBar}
+                          <FaSistrix style={iconStyles} onClick={handleClick}/>
+                        </div>
+
+                       
+      </div>
+                        
+                        :"";
+                      
+      return show;
+    } 
+
+    const btnMenu =()=>{
+      const btnMenu =visibility? <button className="openMenu"  onClick={()=>setVisibility(!visibility)}>
+                                       <i class="fa fa-times" aria-hidden="true"></i>   
+                                  </button>
+                        
+                        : <button className="openMenu"  onClick={()=>setVisibility(!visibility)}>
+                            <i className="fa fa-bars" aria-hidden="true"></i>
+                          </button>;        
+                      
+     return btnMenu;
+    }
+
+   
+    return ( 
+    
+
+<div className="header__nav">
+             <Logo/>
+           {
+           menu() 
+           }
+
+          {
+            btnMenu()
+          }
+         
+</div>
+   
+   )
+
+}
+
+export default NavBar;

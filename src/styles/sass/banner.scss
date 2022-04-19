@@ -1,0 +1,58 @@
+.banner-background {
+  .banner__card {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background: linear-gradient(
+      0deg,
+      rgba(14, 25, 48, 1) 11%,
+      rgba(14, 25, 48, 0.7685324618128502) 45%,
+      rgba(14, 25, 48, 0.2531262993478641) 95%
+    );
+  }
+}
+
+.banner {
+  position: absolute;
+  background: linear-gradient(
+    0deg,
+    rgba(14, 25, 48, 1) 11%,
+    rgba(14, 25, 48, 0.7685324618128502) 45%,
+    rgba(14, 25, 48, 0.2531262993478641) 95%
+  );
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .banner__titleContainer {
+    width: 100%;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: $primaryFont;
+    margin-right: 20px;
+    height: 500px;
+  } 
+}
+.moveUpDown{
+    color: $primaryColor;
+    font-size:30px;
+    animation: MoveUpDown 3s linear infinite;
+    position: absolute;
+    left: 50;
+    bottom: 0;
+    cursor: "pointer";
+    z-index: 0;
+    margin-bottom: -40;
+}
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    bottom: 50px;
+  }
+  50% {
+    bottom: 70px;
+  }
+}

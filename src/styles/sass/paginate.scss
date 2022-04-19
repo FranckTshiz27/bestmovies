@@ -1,0 +1,29 @@
+.paginate {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  button {
+    margin: 5px;
+    width: 70px;
+    font-size: 12px;
+    padding: 1px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 10em;
+    color: #fff;
+    &:hover {
+      background-color: #011220;
+    }
+  }
+
+  p {
+    margin: 5px;
+    background-color: $primaryColor;
+    width: 70px;
+    font-size: 12px;
+    padding: 2px;
+    border: 1px solid $primaryColor;
+  }
+}

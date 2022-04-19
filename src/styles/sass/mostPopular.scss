@@ -1,0 +1,55 @@
+.mostPopular {
+  background-color: rgba(14, 25, 48, 0.7685324618128502);
+  .mostPopular__titleContainer {
+    margin-left: 0;
+    margin-bottom: 20px;
+    text-align: left;
+    h1 {
+      font-size: 26px;
+      font-weight: 400;
+
+      &:after {
+        content: "";
+        background-color: #000;
+        height: 4px;
+        width: 90px;
+        position: absolute;
+        transform: translate(-220%, 40px);
+        background: linear-gradient(
+          60deg,
+          rgba($primaryColor, 1) 50%,
+          #fff 50%
+        );
+      }
+    }
+  }
+
+  .mostPopular__categoriesContainer {
+    display: flex;
+    margin-left: 0;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 1.8em;
+    width: 100%;
+    justify-content: center;
+     justify-content: center;
+    .activeCategorie {
+      color: $primaryColor;
+      transition: 3s;
+    }
+  }
+
+  .lstContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .popularMovies__title {
+    font-size: 22px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}

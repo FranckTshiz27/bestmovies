@@ -1,0 +1,25 @@
+.comingUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-bottom: 0.5px solid rgba($primaryColor, 0.2);
+  background-color: rgba(14, 25, 48, 0.7685324618128502);
+  .comingUp__container {
+    width: 90%;
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .comingUp__title {
+    font-size: 22px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}

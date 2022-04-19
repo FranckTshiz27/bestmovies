@@ -1,0 +1,14 @@
+.logo {
+  color: $primaryColor;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: $primaryFont;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  em {
+    color: $thirdColor;
+    font-style: normal;
+  }
+}

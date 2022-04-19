@@ -1,0 +1,132 @@
+@import "variables.scss";
+.detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family:$primaryFont ;
+  min-height: 95vh;
+  width: 100%;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    rgb(14, 26, 51) 11%,
+    rgba(14, 25, 48, 0.7685324618128502) 45%,
+    rgba(7, 13, 24, 0.253) 95%
+  ), center center;
+  .detail_img{
+    width: 84em;
+    height: 60em;
+    object-fit: cover;
+ }
+ .detail__container{
+   width: 100%;
+  background-color: rgba(#000,0.8);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: auto;
+   min-height: 100%;
+   z-index: 10;
+   padding:6em 8em;
+   position:absolute;
+   text-align: left;
+   .detail__container__first{
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     padding-bottom: 1em;
+     height: 40%;
+     border-bottom: 0.5px solid #fff;
+     .image__container{
+       display: flex;
+       justify-content: center;
+       width: 30%;
+       position: relative;
+      img{
+        width: 19.2em;
+        height: auto;
+        object-fit: contain;
+        
+      }
+      .detail__container__first__description__action__container{
+        position: absolute;
+        color: rgba($primaryColor,0.9);
+        z-index: 1000;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .play{
+          font-size: 3em;
+          transition: 10ms;
+          &:hover{
+            transform: scale(1.1);
+            
+          }
+        }
+        &:hover{
+          color: rgba(#fff,0.3);
+          background-color: rgba($color: #000000, $alpha: 0.2);
+        }
+    }
+     }
+      
+  
+     .detail__container__first__description{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       width: 65%;
+       .detail__container__first__description__text{
+        h1{
+          font-size: 2em;
+          
+         }
+         h2{
+           font-size: 1.2em;
+           color: $primaryColor;
+         }
+       }
+
+       .detail__container__first__description__productions{
+         h3{
+          font-size: 1.1em;
+         }
+         .productions_container{
+           display: flex;
+           justify-content: flex-start;
+         }
+       }
+       
+     
+     }
+     .detail__container__first_img{
+
+     }
+   }
+   .detail__container__second{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+   h1{
+     font-size: 2em;
+     color: rgba($primaryColor,0.9);
+    }
+   .actors_container{
+     display: flex;
+     justify-content: center;
+     width: 100%;
+   }
+  }
+   
+ }
+}
+
