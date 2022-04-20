@@ -12,32 +12,30 @@ const Card= ({title,imageUrl,poster_path,vote_average,id})=>{
     let history = useHistory();
     const [movieId,setMovieId]= useContext(MovieIdContext);
     const [pid,setPid]=useState(movieId);
-    const trailerUrl = `https://api.themoviedb.org/3/movie/${pid}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en`;
+    const trailerUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en`;
     const [movieUrl,setMovieUrl]= useContext(MovieUrlContext);
 
+    console.log(" movie from card  ",movieUrl," id  ",id);
  const handleClick =()=>{
     history.push("/detail");
     setMovieId(id)
-   
-    
  }
 
  const playMovie=()=>{
      history.push("/play")
-     console.log(" pidddddddddddddddddddddddd   ",trailerUrl);
-     setMovieUrl(pid);
+     console.log(" l'url du film ");
+     setMovieId(id)
+     setMovieUrl(movieUrl); 
  }
  useEffect(()=>{
-
     const fetchData = async () => {
-        
         const movieTrailData = await fetch(trailerUrl);
         const movieTrailResponse = await movieTrailData.json();
         if (movieTrailResponse.results[0]!==undefined) {
             setMovieUrl(movieTrailResponse.results[0].key);
         }
        }
-   
+  fetchData()
  })
     return (  
         <MovieUrlProvider>

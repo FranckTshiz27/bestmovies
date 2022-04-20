@@ -7,18 +7,26 @@ import 'react-slideshow-image/dist/styles.css';
 import {TrendingMovieContainer} from '../styled/TrendingMovieContainer';
 import { SeeMoreButtonStyled } from '../styled/SeeMoreButtonStyled';
 import  {VscFoldDown} from "react-icons/vsc";
+import { useHistory } from "react-router-dom"; 
+import { useContext } from "react";
+import { MovieIdContext } from "../../context/MovieIdContext";
+import { MovieUrlContext, MovieUrlProvider } from "../../context/MovieUrlContext";
 
 const Banner =()=>{
     const imageUrl = "https://image.tmdb.org/t/p/original";
     const {all:url} = trendingUrl;
+    const [movieId,setMovieId]= useContext(MovieIdContext);
     let trending_movies=useFetchData(url,1)
-
+    let history = useHistory();
     if (trending_movies) {
        
        trending_movies=trending_movies.results;
     }
 
-   
+   const handleClick =(id)=>{
+     setMovieId(id)
+     history.push("/detail")
+   }
     const showMovies = () => {
         let myMovies = []
         if (trending_movies!= null && trending_movies.length > 0) {
@@ -31,7 +39,7 @@ const Banner =()=>{
               }
                 
            <h2 className="movie-description">{movie.overview}</h2>
-           <SeeMoreButtonStyled>MORE DETAILS</SeeMoreButtonStyled>
+           <SeeMoreButtonStyled onClick={()=>handleClick(movie.id)}>MORE DETAILS</SeeMoreButtonStyled>
       </TrendingMovieContainer>
           })
     

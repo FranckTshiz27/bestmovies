@@ -436,7 +436,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translate(250%, -50%);
+  transform: translate(190%, -50%);
 }
 
 .card button {

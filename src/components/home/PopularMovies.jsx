@@ -75,6 +75,7 @@ const PopularMovies = ({ imageUrl }) => {
             movies = popularMovies.map((movie) => {
                 return <Card
                 id={movie.id}
+                vote_average={movie.vote_average}
                     imageUrl={imageUrl}
                     poster_path={movie.backdrop_path}
                     title={movie.title}>

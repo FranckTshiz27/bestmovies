@@ -21,44 +21,35 @@ const UseDetailPage =()=>{
     const trailerUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en`;
     const movieDetailUrl =`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en`
     const movieActorsUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en`;
-const [movieDetailState,setMovieDetailState] = useState();
-const [companies,setCompanies] = useState();
-const [actors,setActors] = useState();
-const [movieUrl,setMovieUrl]= useContext(MovieUrlContext);
+    const [movieDetailState,setMovieDetailState] = useState();
+    const [companies,setCompanies] = useState();
+    const [actors,setActors] = useState();
+    const [movieUrl,setMovieUrl]= useContext(MovieUrlContext);
 
 useEffect(()=>{
     const fetchData = async () => {
-        
        const data = await fetch(movieDetailUrl);
        const response = await data.json()
         setMovieDetailState(response);
-
-       
         setCompanies(response.production_companies);
-
         const actorsData = await fetch(movieActorsUrl);
         const actorsDataResponse = await actorsData.json()
-         setActors(actorsDataResponse.cast);
-
-         setCompanies(response.production_companies);
-
+        setActors(actorsDataResponse.cast);
+        setCompanies(response.production_companies);
         const movieTrailData = await fetch(trailerUrl);
         const movieTrailResponse = await movieTrailData.json();
         if (movieTrailResponse.results[0]!==undefined) {
             setMovieUrl(movieTrailResponse.results[0].key);
         }
- 
       }
      fetchData();
 },[])
    
     const showBackground=()=>{
-
        return movieDetailState&&<img src={movieDetailState.poster_path?`${imageUrl}/${movieDetailState.poster_path}`:defaultImage} className="detail_img" alt="" />
     }
 
     const showMovieImg=()=>{
-
         return movieDetailState&&<img src={movieDetailState.poster_path?`${imageUrl_small}/${movieDetailState.poster_path}`:defaultImage}  alt="" />
      }
 
@@ -69,9 +60,7 @@ useEffect(()=>{
             return <CardProductCountry name={company.name} country={company.country} logo_path={company.logo_path}></CardProductCountry>
             })
          }
-
          let newCompanies =[];
-
          for (let index = 0; index < 6; index++) {
             
             if (newCompanies[index]!==null) {
@@ -81,13 +70,11 @@ useEffect(()=>{
             }
          }
        
-
         return newCompanies;
      }
 
      const showActors = ()=>{
         let myActors = [];
-       
         if (actors!==undefined) {
            myActors= actors.map(actor=>{
                return <CardActor name={actor.original_name} profile_path={actor.profile_path}></CardActor>
