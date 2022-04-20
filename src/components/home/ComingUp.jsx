@@ -4,6 +4,7 @@ import { moviesUrls } from '../../api_url';
 import { useFetchData } from '../../hooks/fetchHooks';
 import Card from '../Card';
 import Pagination from '../../components/Pagination'
+import SkeletonCard from '../SkeletonCard';
 
 const ComingUp = ({ imageUrl }) => {
 
@@ -66,14 +67,18 @@ const ComingUp = ({ imageUrl }) => {
             }
             )
 
+            if (movies.length==0) return showSkeletons();
+
 
             return movies;
         }
-
-
     }
 
-
+    const showSkeletons = () => {
+        let myMoviesSkeletons = []
+          myMoviesSkeletons.push(<SkeletonCard />,<SkeletonCard />,<SkeletonCard />,<SkeletonCard />)
+        return myMoviesSkeletons;
+      }
     const show = () => {
         return <Carousel itemsToShow={4}>
             {

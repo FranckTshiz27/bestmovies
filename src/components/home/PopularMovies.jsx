@@ -5,6 +5,7 @@ import { useFetchData } from '../../hooks/fetchHooks';
 import Card from '../Card';
 import Pagination from '../Pagination';
 import OptionsComponent from '../../components/OptionsComponent';
+import SkeletonCard from '../SkeletonCard';
 
 
 const PopularMovies = ({ imageUrl }) => {
@@ -82,9 +83,17 @@ const PopularMovies = ({ imageUrl }) => {
                 </Card>
             })
         }
+
+        if (movies.length===0) return showSkeletons();
+
         return movies;
     }
 
+    const showSkeletons = () => {
+        let myMoviesSkeletons = []
+          myMoviesSkeletons.push(<SkeletonCard />,<SkeletonCard />,<SkeletonCard />,<SkeletonCard />)
+        return myMoviesSkeletons;
+      }
     function toggle(buttonName) {
         switch (buttonName) {
             case "series":

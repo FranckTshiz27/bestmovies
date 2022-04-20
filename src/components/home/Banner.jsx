@@ -44,11 +44,11 @@ const Banner =()=>{
           })
     
         }
-    
-    
         return myMovies;
       }
 
+
+      
     return(
             <div className="banner-background">   
             <div className="banner__card-container">

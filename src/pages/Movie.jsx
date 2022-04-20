@@ -5,6 +5,7 @@ import { useFetchData, useFetchDataByGender, useFetchOnePageData } from '../hook
 import { useHistory } from 'react-router-dom';
 import Card from '../components/Card';
 import Pagination from '../components/Pagination'
+import SkeletonCard from '../components/SkeletonCard';
 const Movie = ({ imageUrl }) => {
 
 
@@ -15,18 +16,10 @@ const Movie = ({ imageUrl }) => {
   let totalPages = 0;
   const { all: allMoviesUrl, genres: genresUrl, moviesByGenre: moviesByGenreUrl } = moviesUrls;
   let data = useFetchData(allMoviesUrl, currentPage, selectedCategory);
+  let myMovies = [];
 
   const history = useHistory();
-
-  const handleChangeSearch = () => {
-
-    history.push("/search")
-  }
-
   let genders = useFetchOnePageData(genresUrl);
-
-
-
   let movies = [];
 
   if (data) {
@@ -66,10 +59,9 @@ const Movie = ({ imageUrl }) => {
   const showGenres = () => {
 
     let myGenres = [];
-
     if (genders != null && genders.length > 0) {
       myGenres = genders.map((genre) => {
-        return <button onClick={(e) => handleClick_selectCategory(genre, e)} className={selectedCategory.name===genre.name?"active_category":""}>{genre.name}</button>
+        return <button onClick={(e) => handleClick_selectCategory(genre, e)} className={selectedCategory.name === genre.name ? "active_category" : ""}>{genre.name}</button>
       })
 
     }
@@ -79,23 +71,29 @@ const Movie = ({ imageUrl }) => {
   }
 
   const showMovies = () => {
-
-    let myMovies = []
-
     if (movies != null && movies.length > 0) {
       myMovies = movies.map((movie) => {
-        return <Card imageUrl={imageUrl} 
-        id={movie.id}
-        poster_path={movie.backdrop_path} 
-        title={movie.original_title} 
-        vote_average={movie.vote_average}></Card>
+        return <Card imageUrl={imageUrl}
+          id={movie.id}
+          poster_path={movie.backdrop_path}
+          title={movie.original_title}
+          vote_average={movie.vote_average}></Card>
       })
 
     }
+
+if (myMovies.length==0) 
+    return showSkeletons();
+
     return myMovies;
   }
 
 
+  const showSkeletons = () => {
+    let myMoviesSkeletons = []
+      myMoviesSkeletons.push(<SkeletonCard />,<SkeletonCard />,<SkeletonCard />,<SkeletonCard />)
+    return myMoviesSkeletons;
+  }
   return (
 
     <div className="movie">
