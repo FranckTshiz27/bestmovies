@@ -57,7 +57,6 @@ const Movie = ({ imageUrl }) => {
 
 
   const showGenres = () => {
-
     let myGenres = [];
     if (genders != null && genders.length > 0) {
       myGenres = genders.map((genre) => {
@@ -79,7 +78,6 @@ const Movie = ({ imageUrl }) => {
           title={movie.original_title}
           vote_average={movie.vote_average}></Card>
       })
-
     }
 
 if (myMovies.length==0) 

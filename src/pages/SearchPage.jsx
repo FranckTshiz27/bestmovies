@@ -7,6 +7,7 @@ import Pagination from '../components/Pagination';
 import OptionsComponent from '../components/OptionsComponent';
 import { useFetchDataSearch } from '../hooks/fetchHooks';
 import { moviesUrls, serialsUrls } from "../api_url"
+import SkeletonCard from "../components/SkeletonCard";
 
 const SearchPage = ({ imageUrl }) => {
 
@@ -21,6 +22,7 @@ const SearchPage = ({ imageUrl }) => {
    let totalResults;
    let data = useFetchDataSearch(url, currentPage, query);
    let movies = []
+   let myMovies = []
 
    if (data) {
       movies = data.results
@@ -47,7 +49,6 @@ const SearchPage = ({ imageUrl }) => {
    }
 
    const showMovies = () => {
-      let myMovies = []
       if (movies != null && movies.length > 0) {
          myMovies = movies.map((movie) => {
             return <Card 
@@ -59,25 +60,10 @@ const SearchPage = ({ imageUrl }) => {
             </Card>
          })
       }
+      if (myMovies.length===0||query===undefined) return showSkeletons();
       return myMovies;
    }
 
-   const myPage = movies && movies.length !== 0 ?
-      <section className="">
-         <div className="movies__container">
-            {showMovies()}
-         </div>
-         <Pagination totalPages={totalPages}
-            currentPage={currentPage}
-            getNexPage={handleNextPage}
-            getPreviewPage={handlePreviewPage}
-         >
-         </Pagination>
-      </section>
-      :
-      <div>
-         <SearchPageSkeleton />
-      </div>
 
    function toggle(buttonName) {
       switch (buttonName) {
@@ -97,7 +83,11 @@ const SearchPage = ({ imageUrl }) => {
             break;
       }
    }
-
+   const showSkeletons = () => {
+      let myMoviesSkeletons = []
+        myMoviesSkeletons.push(<SkeletonCard />,<SkeletonCard />,<SkeletonCard />,<SkeletonCard />)
+      return myMoviesSkeletons;
+    }
    return (
       <>
          <div className="searchPage">
@@ -119,7 +109,17 @@ const SearchPage = ({ imageUrl }) => {
                   {`${totalPages} pages`}
                </div>
             </div>
-            {myPage}
+            <section className="">
+         <div className="movies__container">
+            {showMovies()}
+         </div>
+         <Pagination totalPages={totalPages}
+            currentPage={currentPage}
+            getNexPage={handleNextPage}
+            getPreviewPage={handlePreviewPage}
+         >
+         </Pagination>
+      </section>
          </div>
       </>
    )

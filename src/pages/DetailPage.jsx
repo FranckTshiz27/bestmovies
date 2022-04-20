@@ -38,7 +38,7 @@ useEffect(()=>{
         setCompanies(response.production_companies);
         const movieTrailData = await fetch(trailerUrl);
         const movieTrailResponse = await movieTrailData.json();
-        if (movieTrailResponse.results[0]!==undefined) {
+        if (movieTrailResponse.results&&movieTrailResponse.results[0]!==undefined) {
             setMovieUrl(movieTrailResponse.results[0].key);
         }
       }

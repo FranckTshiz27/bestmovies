@@ -1,11 +1,11 @@
 
-import { useEffect, useState } from 'react/cjs/react.development';
-import InputFilter from '../components/InputFilter';
+import { useState } from 'react/cjs/react.development';
 import Card from '../components/Card';
 import { moviesUrls, serialsUrls } from '../api_url';
 import { useFetchData, useFetchDataByGender, useFetchOnePageData } from '../hooks/fetchHooks';
 import { useHistory } from 'react-router-dom';
 import Pagination from '../components/Pagination';
+import SkeletonCard from '../components/SkeletonCard';
 
 const SerialPage = ({ imageUrl }) => {
 
@@ -17,19 +17,11 @@ const SerialPage = ({ imageUrl }) => {
   const { all: allSerialsUrl, genres } = serialsUrls;
   let data = useFetchData(allSerialsUrl, currentPage, selectedCategory);
   let totalPages;
+  let genders = useFetchOnePageData(genres);
+  let movies = [];
+
 
   const history = useHistory();
-
-  const handleChangeSearch = () => {
-
-    history.push("/search")
-  }
-
-  let genders = useFetchOnePageData(genres);
-
-
-
-  let movies = [];
 
   if (data) {
     movies = data.results;
@@ -38,12 +30,11 @@ const SerialPage = ({ imageUrl }) => {
 
   if (genders)
     genders = genders.genres;
-
-
-  const handleChange = (inputValue) => {
-
-    history.push("/search")
-  }
+    const showSkeletons = () => {
+      let myMoviesSkeletons = []
+        myMoviesSkeletons.push(<SkeletonCard />,<SkeletonCard />,<SkeletonCard />,<SkeletonCard />)
+      return myMoviesSkeletons;
+    }
 
 
 
@@ -87,7 +78,6 @@ const SerialPage = ({ imageUrl }) => {
   const showMovies = () => {
 
     let myMovies = []
-
     if (movies != null && movies.length > 0) {
       myMovies = movies.map((movie) => {
         return <Card 
@@ -99,32 +89,10 @@ const SerialPage = ({ imageUrl }) => {
       })
 
     }
-
-
+    if (myMovies.length==0) return showSkeletons();
     return myMovies;
   }
 
-
-  const filterData = (query) => {
-    let filterMovies = [];
-    if (query)
-      if (movies != null && movies.length > 0) {
-
-        filterMovies = movies.map((movie) => {
-
-          return (movie.title.indexOf(query) !== -1)
-
-        })
-
-      }
-
-    data = filterMovies;
-
-  }
-
-  const handleClick = (e) => {
-
-  }
 
   return (
 
