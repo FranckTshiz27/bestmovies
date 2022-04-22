@@ -1,3 +1,4 @@
+import React,{ useState } from "react";
 import { MovieUrlContext, MovieUrlProvider } from "../context/MovieUrlContext";
 import { useContext } from "react";
 

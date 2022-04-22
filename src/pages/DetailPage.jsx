@@ -1,5 +1,5 @@
-import { useEffect,useState } from "react";
-import { Router } from "react-router-dom";
+import React,{ useState } from "react";
+import { useEffect} from "react";
 import { MovieProvider } from "../context/MovieIdContext";
 import { useContext } from "react";
 import { MovieIdContext } from "../context/MovieIdContext";

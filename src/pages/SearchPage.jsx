@@ -1,5 +1,4 @@
-
-import { useState, useContext } from "react";
+import React,{ useState ,useContext} from "react";
 import { ContextQuery } from "../context/ContextQuery";
 import Card from '../components/Card';
 import SearchPageSkeleton from './SearchPageSkeleton';

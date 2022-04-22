@@ -211,8 +211,7 @@ header {
   .header__nav .header__nav__ul {
     z-index: 5;
     margin-top: 100px;
-    margin-left: -60px;
-    width: 100px;
+    width: 100%;
     background-color: #0b1014;
     list-style: none;
     display: flex;
@@ -220,6 +219,10 @@ header {
     justify-content: space-between;
     align-items: flex-start;
     position: absolute;
+    background-color: aqua;
+  }
+  .header__nav .header__nav__ul li {
+    background-color: aqua;
   }
   .header__nav .header__nav__ul li .li__a {
     z-index: 5;

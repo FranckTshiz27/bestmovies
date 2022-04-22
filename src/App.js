@@ -1,4 +1,5 @@
 import logo from "./logo.svg";
+import React,{ useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/header/Header";
@@ -13,7 +14,6 @@ import UseDetailPage from "./pages/DetailPage";
 import { QueryProvider } from "./context/ContextQuery";
 import { MovieProvider } from "./context/MovieIdContext";
 import { MovieUrlProvider } from "./context/MovieUrlContext";
-import ModalPAge from "./pages/ModalPage";
 import ModalPage from "./pages/ModalPage";
 function App() {
   const imageUrl = "http://image.tmdb.org/t/p/w500/";
@@ -23,38 +23,42 @@ function App() {
       <Router>
         <QueryProvider>
           <MovieProvider>
-          <MovieUrlProvider>
-          <Header />
-          <Switch>
-            <Route
-              path="/"
-              exact
-              component={() => <Home imageUrl={imageUrl} />}
-            />
-            <Route
-              path="/movies"
-              component={() => <Movie imageUrl={imageUrl} />}
-            />
+            <MovieUrlProvider>
+              <Header />
+              <Switch>
+                <Route
+                 exact
+                  path="/"
+                  component={() => <Home imageUrl={imageUrl} />}
+                />
+                <Route
+                  path="/movies"
+                  component={() => <Movie imageUrl={imageUrl} />}
+                />
 
-            <Route
-              path="/tvShows"
-              component={() => <SerialPage imageUrl={imageUrl} />}
-            />
-            <Route
-              path="/search"
-              component={() => <SearchPage imageUrl={imageUrl} />}
-            />
+                <Route
+                  exact
+                  path="/tvShows"
+                  component={() => <SerialPage imageUrl={imageUrl} />}
+                />
+                <Route
+                  exact
+                  path="/search"
+                  component={() => <SearchPage imageUrl={imageUrl} />}
+                />
 
-            <Route
-              path="/detail"
-              component={() => <UseDetailPage imageUrl={imageUrl} />}
-            />
-            <Route
-              path="/play"
-              component={() => <ModalPage imageUrl={imageUrl} />}
-            />
-          </Switch>
-          </MovieUrlProvider>
+                <Route
+                  exact
+                  path="/detail"
+                  component={() => <UseDetailPage imageUrl={imageUrl} />}
+                />
+                <Route
+                  exact
+                  path="/play"
+                  component={() => <ModalPage imageUrl={imageUrl} />}
+                />
+              </Switch>
+            </MovieUrlProvider>
           </MovieProvider>
         </QueryProvider>
       </Router>

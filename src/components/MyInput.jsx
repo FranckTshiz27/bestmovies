@@ -6,12 +6,8 @@ import Context from '../context/SearchContext'
 const MyInput = (props) =>{
 
     const [searchBarStyle,setSeachBarStyle] = useState();
-
     const myContext = useContext(Context);
-  
    const handleChange = (e)=>{
-      // let filter= e.target.value;
-      // props.handleChange({valeur:filter}); 
   }
   
   const history = useHistory();
@@ -20,7 +16,6 @@ const MyInput = (props) =>{
   useEffect(() => {
     return history.listen((location) => {
       if (location.pathname !== "/search") {
-          // setSeachBarStyle("ipFilter-ligth-close")
       }
     });
   }, [history]);

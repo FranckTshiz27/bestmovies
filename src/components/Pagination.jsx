@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState ,useContext} from "react";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 
 const Pagination = ({ currentPage, getNexPage, getPreviewPage, totalPages }) => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../header/Header';
 import PopularMovies from './PopularMovies'
 import Banner from './Banner'
 import ComingUp from './ComingUp'

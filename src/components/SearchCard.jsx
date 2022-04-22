@@ -1,4 +1,4 @@
-import img1 from '../images/img5.jpg';
+
 import defaultImage from '../images/black.jpg';
 const Card= ({title,imageUrl,poster_path})=>{
 

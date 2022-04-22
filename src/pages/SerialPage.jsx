@@ -1,5 +1,4 @@
-
-import { useState } from 'react/cjs/react.development';
+import React,{ useState ,useContext} from "react";
 import Card from '../components/Card';
 import { moviesUrls, serialsUrls } from '../api_url';
 import { useFetchData, useFetchDataByGender, useFetchOnePageData } from '../hooks/fetchHooks';

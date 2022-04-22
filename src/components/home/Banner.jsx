@@ -1,5 +1,5 @@
 
-import Logo from '../header/Logo';
+import React,{ useState ,useContext} from "react";
 import {trendingUrl} from '../../api_url';
 import {useFetchData}  from '../../hooks/fetchHooks'
 import { Slide } from 'react-slideshow-image';
@@ -8,12 +8,9 @@ import {TrendingMovieContainer} from '../styled/TrendingMovieContainer';
 import { SeeMoreButtonStyled } from '../styled/SeeMoreButtonStyled';
 import  {VscFoldDown} from "react-icons/vsc";
 import { useHistory } from "react-router-dom"; 
-import { useContext } from "react";
 import { MovieIdContext } from "../../context/MovieIdContext";
-import { MovieUrlContext, MovieUrlProvider } from "../../context/MovieUrlContext";
 
 const Banner =()=>{
-    const imageUrl = "https://image.tmdb.org/t/p/original";
     const {all:url} = trendingUrl;
     const [movieId,setMovieId]= useContext(MovieIdContext);
     let trending_movies=useFetchData(url,1)

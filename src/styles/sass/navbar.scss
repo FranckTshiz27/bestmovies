@@ -68,7 +68,6 @@
     justify-content: space-between;
     align-items: center;
     height: 55px;
-
     button {
       border: 0px;
       display: flex;
@@ -82,8 +81,8 @@
     .header__nav__ul {
       z-index: 5;
       margin-top: 100px;
-      margin-left: -60px;
-      width: 100px;
+      //  margin-left: -60px;
+      width: 100%;
       background-color: $secondaryColor;
       list-style: none;
       display: flex;
@@ -91,8 +90,9 @@
       justify-content: space-between;
       align-items: flex-start;
       position: absolute;
-
+      background-color: aqua;
       li {
+        background-color: aqua;
         .li__a {
           z-index: 5;
           display: flex;

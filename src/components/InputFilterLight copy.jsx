@@ -1,4 +1,4 @@
-import { useState } from "react/cjs/react.development";
+import React,{ useState ,useContext} from "react";
 
 
 function InputFilterLight(props) {
@@ -9,9 +9,6 @@ function InputFilterLight(props) {
    
 }
 
-const handleClick = ()=>{
- props.onClick(alert(props.value))
-}
   return (
     <div className="ipFilter-ligth">
       <input

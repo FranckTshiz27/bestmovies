@@ -1,15 +1,11 @@
 
 import React,{useState,useEffect}  from 'react';
 import Logo from './Logo';
-// import InputFilterLight from '../InputFilterLight';
 import {NavLink} from 'react-router-dom';
 import { FaSistrix } from "react-icons/fa";
-import { useHistory } from 'react-router-dom';
 import {useInputFilterLight} from '../../hooks/fetchHooks';
-import {searchContext, SearchProvider} from '../../context/SearchContext';
+import {searchContext} from '../../context/SearchContext';
 import { useContext } from 'react';
-
-
 
 function  NavBar()
 {
@@ -22,7 +18,6 @@ function  NavBar()
 
   
 const handleClick = ()=>{
- 
   setIsSearching(!isSearching)
   if (start===false) 
       setStart(true)
@@ -32,6 +27,10 @@ const onClick = ()=>{
   setIsSearching(false)
 }
 
+const handleVisibile=()=>{
+  alert(" ditsssssssssssssssssssss ")
+  setVisibility(!visibility)
+}
     const menu =()=>{
       const show =visibility? 
       <div>
@@ -64,7 +63,7 @@ const onClick = ()=>{
                                        <i class="fa fa-times" aria-hidden="true"></i>   
                                   </button>
                         
-                        : <button className="openMenu"  onClick={()=>setVisibility(!visibility)}>
+                        : <button className="openMenu"  onClick={handleVisibile}>
                             <i className="fa fa-bars" aria-hidden="true"></i>
                           </button>;        
                       

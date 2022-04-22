@@ -1,5 +1,5 @@
 
-import { useState } from 'react/cjs/react.development';
+import React,{ useState } from "react";
 import { moviesUrls } from '../api_url';
 import { useFetchData, useFetchDataByGender, useFetchOnePageData } from '../hooks/fetchHooks';
 import { useHistory } from 'react-router-dom';
@@ -7,18 +7,13 @@ import Card from '../components/Card';
 import Pagination from '../components/Pagination'
 import SkeletonCard from '../components/SkeletonCard';
 const Movie = ({ imageUrl }) => {
-
-
   const defaultCategory = { id: 200, name: "All the movies" };
   const [selectedCategory, setSelectedCategory] = useState({ id: 200, name: "All the movies" });
   const [currentPage, setcurrentPage] = useState(1);
-  const [myFilter, setMyFilter] = useState("");
   let totalPages = 0;
   const { all: allMoviesUrl, genres: genresUrl, moviesByGenre: moviesByGenreUrl } = moviesUrls;
   let data = useFetchData(allMoviesUrl, currentPage, selectedCategory);
   let myMovies = [];
-
-  const history = useHistory();
   let genders = useFetchOnePageData(genresUrl);
   let movies = [];
 

@@ -1,10 +1,9 @@
+import React,{ useState ,useContext} from "react";
 import { useHistory } from "react-router-dom";
 import defaultImage from '../images/black.jpg';
 import { CgDetailsMore } from "react-icons/cg";
 import { AiFillYoutube } from "react-icons/ai";
 import { MovieIdContext } from "../context/MovieIdContext";
-import { useContext } from "react";
-import { useState } from "react";
 import { MovieUrlContext, MovieUrlProvider } from "../context/MovieUrlContext";
 
 const Card = ({ title, imageUrl, poster_path, vote_average, id }) => {

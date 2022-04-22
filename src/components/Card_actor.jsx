@@ -1,9 +1,7 @@
- import { useHistory } from "react-router-dom";
+import React,{ useState ,useContext} from "react";
+import { useHistory } from "react-router-dom";
 import defaultImage from '../images/black.jpg';
-import {CgDetailsMore} from "react-icons/cg";
-import {AiFillYoutube} from "react-icons/ai";
 import { MovieIdContext } from "../context/MovieIdContext";
-import { useContext } from "react";
 const CardActor= ({profile_path,title,name,country})=>{
     let history = useHistory();
     const [movieId,setMovieId]= useContext(MovieIdContext);
