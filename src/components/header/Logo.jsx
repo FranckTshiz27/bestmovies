@@ -4,9 +4,9 @@ import { IoIosFilm} from "react-icons/io";
 
 function Logo()
 {
-    const style ={fontSize:"30px"}
+    const style ={}
     return <h1 className="logo">
-           <IoIosFilm style={style}/>  HAPPY <em>STREAM</em>
+           <IoIosFilm className='logo_icon'/>  HAPPY <em>STREAM</em>
     </h1>
 
 }

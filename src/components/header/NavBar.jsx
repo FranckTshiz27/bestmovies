@@ -28,12 +28,10 @@ const onClick = ()=>{
 }
 
 const handleVisibile=()=>{
-  alert(" ditsssssssssssssssssssss ")
   setVisibility(!visibility)
 }
     const menu =()=>{
       const show =visibility? 
-      <div>
         <div  className="header__nav__ul">
       
                           <li>
@@ -50,8 +48,6 @@ const handleVisibile=()=>{
                           <FaSistrix style={iconStyles} onClick={handleClick}/>
                         </div>
 
-                       
-      </div>
                         
                         :"";
                       

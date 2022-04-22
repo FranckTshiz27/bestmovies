@@ -44,7 +44,6 @@
         box-sizing: border-box;
         &:hover {
           background-color: rgba($color: #fff, $alpha: 0.1);
-          // color: rgba($color: $primaryColor, $alpha: 1);
         }
       }
     }
@@ -52,7 +51,6 @@
 }
 
 .active1 {
-  // color: rgba($color: $primaryColor, $alpha: 1) !important;
   font-weight: 700;
   background-color: rgba($color: #fff, $alpha: 0.1);
   border-bottom: 1px solid $primaryColor;
@@ -63,11 +61,11 @@
 @media all and (max-width: 768px) {
   .header__nav {
     z-index: 5;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 55px;
+    height: 5000rem;
     button {
       border: 0px;
       display: flex;
@@ -81,8 +79,7 @@
     .header__nav__ul {
       z-index: 5;
       margin-top: 100px;
-      //  margin-left: -60px;
-      width: 100%;
+      width: 100vw;
       background-color: $secondaryColor;
       list-style: none;
       display: flex;
@@ -90,9 +87,7 @@
       justify-content: space-between;
       align-items: flex-start;
       position: absolute;
-      background-color: aqua;
       li {
-        background-color: aqua;
         .li__a {
           z-index: 5;
           display: flex;
