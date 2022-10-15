@@ -1,8 +1,7 @@
-import React,{ useState ,useContext} from "react";
+import React,{ useState} from "react";
 import Card from '../components/Card';
-import { moviesUrls, serialsUrls } from '../api_url';
-import { useFetchData, useFetchDataByGender, useFetchOnePageData } from '../hooks/fetchHooks';
-import { useHistory } from 'react-router-dom';
+import { serialsUrls } from '../api_url';
+import { useFetchData,  useFetchOnePageData } from '../hooks/fetchHooks';
 import Pagination from '../components/Pagination';
 import SkeletonCard from '../components/SkeletonCard';
 
@@ -12,15 +11,11 @@ const SerialPage = ({ imageUrl }) => {
   const defaultCategory = { id: 200, name: "All the serials" };
   const [selectedCategory, setSelectedCategory] = useState({ id: 200, name: "All the serials" });
   const [currentPage, setcurrentPage] = useState(1);
-  const { all: allMoviesUrl, moviesByGenre: moviesByGenreUrl } = moviesUrls;
   const { all: allSerialsUrl, genres } = serialsUrls;
   let data = useFetchData(allSerialsUrl, currentPage, selectedCategory);
   let totalPages;
   let genders = useFetchOnePageData(genres);
   let movies = [];
-
-
-  const history = useHistory();
 
   if (data) {
     movies = data.results;
@@ -88,7 +83,7 @@ const SerialPage = ({ imageUrl }) => {
       })
 
     }
-    if (myMovies.length==0) return showSkeletons();
+    if (myMovies.length===0) return showSkeletons();
     return myMovies;
   }
 

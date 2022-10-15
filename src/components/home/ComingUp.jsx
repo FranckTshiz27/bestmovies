@@ -57,12 +57,13 @@ const ComingUp = ({ imageUrl }) => {
         if (comingUpMovies) {
 
             const movies = comingUpMovies.map((movie, idx) => {
-
                 return <div>
                     {<Card imageUrl={imageUrl}
                        id={movie.id}
+                       overview={movie.overview}
                      poster_path={movie.backdrop_path} 
                     vote_average={movie.vote_average} title={movie.title}></Card>}
+                    
                 </div>
             }
             )
@@ -80,7 +81,7 @@ const ComingUp = ({ imageUrl }) => {
         return myMoviesSkeletons;
       }
     const show = () => {
-        return <Carousel itemsToShow={4}>
+        return <Carousel itemsToShow={3}>
             {
                 showData()
             }
