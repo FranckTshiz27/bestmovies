@@ -1093,7 +1093,6 @@ button.rec-dot:focus {
   min-height: 100%;
   z-index: 10;
   padding: 6em 8em;
-  position: absolute;
   text-align: left;
 }
 .detail .detail__container .detail__container__first {
@@ -1182,7 +1181,7 @@ button.rec-dot:focus {
     align-items: center;
     flex-direction: column;
     font-family: "Roboto", sans-serif;
-    min-height: 95vh;
+    min-height: 100vh;
     width: 100vw;
     position: relative;
     background: linear-gradient(90deg, rgb(14, 26, 51) 11%, rgba(14, 25, 48, 0.7685324618) 45%, rgba(7, 13, 24, 0.253) 95%), center center;
@@ -1196,7 +1195,7 @@ button.rec-dot:focus {
     flex-direction: column;
     align-items: center;
     z-index: 10;
-    padding-top: 200em;
+    padding-top: 2em;
     text-align: center;
   }
   .detail .detail__container .detail__container__first {
@@ -1220,10 +1219,9 @@ button.rec-dot:focus {
     object-fit: contain;
   }
   .detail .detail__container .detail__container__first .image__container .detail__container__first__description__action__container {
-    position: absolute;
     color: rgba(46, 72, 122, 0.9);
     z-index: 100;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100vw;
     cursor: pointer;
     display: flex;
@@ -1245,7 +1243,7 @@ button.rec-dot:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 65%;
+    width: 100%;
   }
   .detail .detail__container .detail__container__first .detail__container__first__description .detail__container__first__description__text h1 {
     font-size: 2em;
