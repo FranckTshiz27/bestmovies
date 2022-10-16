@@ -38,4 +38,16 @@ export const TrendingMovieContainer = styled.section`
     margin-bottom:0.8em;
     font-size:1.8em;
   }
+
+  @media all and (max-width:763px){
+    .movie-title {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin: 0;
+      margin-bottom:0.2em;
+    }
+    .date_released{
+      display:none;
+    }
+  }
 `;

@@ -23,3 +23,10 @@
     margin-bottom: 20px;
   }
 }
+
+@media all and (max-width: 768px) {
+  .comingUp{
+    display: none;
+    background-color: yellow;
+  }
+}

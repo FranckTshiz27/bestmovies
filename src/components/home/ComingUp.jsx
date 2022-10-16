@@ -109,7 +109,7 @@ const ComingUp = ({ imageUrl }) => {
 
         <section className="comingUp">
             <h2 className="comingUp__title">
-                UPCOMING MOVIES
+                UP COMING MOVIES
             </h2>
 
             <div className="comingUp__container">
