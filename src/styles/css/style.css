@@ -1183,6 +1183,7 @@ button.rec-dot:focus {
     font-family: "Roboto", sans-serif;
     min-height: 100vh;
     width: 100vw;
+    margin-bottom: 0;
     position: relative;
     background: linear-gradient(90deg, rgb(14, 26, 51) 11%, rgba(14, 25, 48, 0.7685324618) 45%, rgba(7, 13, 24, 0.253) 95%), center center;
   }
@@ -1190,7 +1191,7 @@ button.rec-dot:focus {
     display: none;
   }
   .detail .detail__container {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1211,7 +1212,6 @@ button.rec-dot:focus {
     justify-content: center;
     width: 100%;
     position: relative;
-    background-color: rgb(50, 25, 192);
   }
   .detail .detail__container .detail__container__first .image__container img {
     width: 19.2em;
@@ -1243,27 +1243,36 @@ button.rec-dot:focus {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
+    margin: 1em;
+  }
+  .detail .detail__container .detail__container__first .detail__container__first__description .detail__container__first__description__text {
+    width: 100vw;
   }
   .detail .detail__container .detail__container__first .detail__container__first__description .detail__container__first__description__text h1 {
     font-size: 2em;
   }
   .detail .detail__container .detail__container__first .detail__container__first__description .detail__container__first__description__text h2 {
-    font-size: 1.2em;
+    font-size: 1em;
     color: #2e487a;
     text-align: justify;
+    padding: 1em 2.5em;
+  }
+  .detail .detail__container .detail__container__first .detail__container__first__description .detail__container__first__description__productions {
+    width: 100vw;
   }
   .detail .detail__container .detail__container__first .detail__container__first__description .detail__container__first__description__productions h3 {
     font-size: 1.1em;
   }
   .detail .detail__container .detail__container__first .detail__container__first__description .detail__container__first__description__productions .productions_container {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
+    width: 100%;
   }
   .detail .detail__container .detail__container__second {
-    width: 100%;
+    width: 100vw;
     height: 60%;
     display: flex;
     flex-direction: column;
@@ -1276,10 +1285,11 @@ button.rec-dot:focus {
   }
   .detail .detail__container .detail__container__second .actors_container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    width: 100%;
+    width: 100vw;
+    margin: 0;
   }
 }
 body {
