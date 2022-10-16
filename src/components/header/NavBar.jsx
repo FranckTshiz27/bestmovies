@@ -14,7 +14,7 @@ function  NavBar()
   const [isSearching,setIsSearching]= useContext(searchContext);
   const searchBar = useInputFilterLight(isSearching,start)
 
-  let iconStyles = { color: "#2ba6cb", fontSize: "1.2em",cursor:"pointer"};
+ let className="header__nav__ul";
 
   
 const handleClick = ()=>{
@@ -25,6 +25,7 @@ const handleClick = ()=>{
 
 const onClick = ()=>{
   setIsSearching(false)
+ 
 }
 
 const handleVisibile=()=>{
@@ -32,9 +33,9 @@ const handleVisibile=()=>{
 }
     const menu =()=>{
       const show =visibility? 
-        <div  className="header__nav__ul">
       
-                          <li>
+        <div  className={className}>
+                        <li>
                             <NavLink className="li__a" exact to="/" activeClassName="active1" onClick={onClick}>HOME</NavLink>
                           </li>
                           <li>
@@ -45,10 +46,9 @@ const handleVisibile=()=>{
                           </li>
                         
                           {searchBar}
-                          <FaSistrix style={iconStyles} onClick={handleClick}/>
-                        </div>
-
-                        
+                          <FaSistrix className="toggleSearch" onClick={handleClick}/>
+            </div>
+ 
                         :"";
                       
       return show;

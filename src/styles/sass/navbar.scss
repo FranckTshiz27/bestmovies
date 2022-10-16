@@ -46,16 +46,30 @@
         }
       }
     }
+    .toggleSearch{
+      color: #2ba6cb;
+      font-size: 1.2em;
+      cursor:pointer;
+    }
   }
+  .header__nav__ul_responsive{
+    display: none;
+  }
+  
 }
 
 .active1 {
   font-weight: 700;
-  background-color: rgba($color: #fff, $alpha: 0.1);
+  background-color: rgba($color: #000, $alpha: 0.4);
   border-bottom: 1px solid $primaryColor;
   font-size: 0.1em;
   padding: 2px;
   box-sizing: border-box;
+}
+@media all and (min-width: 768px) {
+  .header__nav__ul_responsive {
+    display: none;
+  }
 }
 @media all and (max-width: 768px) {
   .header__nav {
@@ -77,34 +91,59 @@
 
     .header__nav__ul {
       z-index: 5;
-      margin-top: 100px;
       width: 100vw;
-      background-color: $secondaryColor;
       list-style: none;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      // justify-content: space-around;
       align-items: flex-start;
       position: absolute;
+      background-color:rgba($color: $primaryColor, $alpha: 1);
+      top: 100%;
+      height: 40vh;
+      padding:0%;
+      .toggleSearch{
+        color: #2ba6cb;
+        font-size: 1.2em;
+        cursor:pointer;
+        display: none;
+      }
       li {
+        width: 100%;
+        padding: 0;
         .li__a {
           z-index: 5;
           display: flex;
           align-items: center;
-          height: 95%;
+          height: 50%;
           color: #fff;
           text-decoration: none;
-          margin: 0px 5px;
+          margin: 0px;
           font-size: 16px;
           cursor: pointer;
-          padding: 10px;
+          padding: 1px 2em;
+          width: 100%;
           &:hover {
-            background-color: rgba($color: #fff, $alpha: 0.3);
-            color: $primaryColor !important;
+            font-weight: 700;
+            background-color: rgba($color: #000, $alpha: 0.6);
+            border-bottom: 1px solid $primaryColor;
+            font-size: 1em;
+            padding: 1px 2em;
+            box-sizing: border-box;
           }
         }
       }
     }
+
+  
+  }
+  .active1 {
+    font-weight: 700;
+    background-color: rgba($color: #000, $alpha: 0.6);
+    border-bottom: 1px solid $primaryColor;
+    font-size: 1em;
+    padding: 1px 2em;
+    box-sizing: border-box;
   }
 }
  
