@@ -9,7 +9,6 @@ function Home({imageUrl})
  
     return (
         <div>
-            {console.log(process.env.REACT_APP_API_KEY)}
             <Banner imageUrl={imageUrl}/>
             <ComingUp imageUrl={imageUrl}/>
             <PopularMovies imageUrl={imageUrl}/> 

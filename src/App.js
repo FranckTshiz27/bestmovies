@@ -14,6 +14,7 @@ import UseDetailPage from "./pages/DetailPage";
 import { QueryProvider } from "./context/ContextQuery";
 import { MovieProvider } from "./context/MovieIdContext";
 import { MovieUrlProvider } from "./context/MovieUrlContext";
+import { QueryProviderResponsive } from "./context/ContextQueryResponsive";
 import ModalPage from "./pages/ModalPage";
 function App() {
   const imageUrl = "http://image.tmdb.org/t/p/w500/";
@@ -23,6 +24,7 @@ function App() {
       <Router>
         <QueryProvider>
           <MovieProvider>
+          <QueryProviderResponsive>
             <MovieUrlProvider>
               <Header />
               <Switch>
@@ -59,6 +61,7 @@ function App() {
                 />
               </Switch>
             </MovieUrlProvider>
+            </QueryProviderResponsive>
           </MovieProvider>
         </QueryProvider>
       </Router>

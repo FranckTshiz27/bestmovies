@@ -1,5 +1,6 @@
 import React,{ useState ,useContext} from "react";
 import { ContextQuery } from "../context/ContextQuery";
+import { ContextQueryReponsive } from "../context/ContextQueryResponsive";
 import Card from '../components/Card';
 import SearchPageSkeleton from './SearchPageSkeleton';
 import Pagination from '../components/Pagination';
@@ -16,10 +17,11 @@ const SearchPage = ({ imageUrl }) => {
    const [isMoviesSelected, selectMovies] = useState(true);
    const [isSeriesSelected, selectSeries] = useState(false);
    const [query, setQuery] = useContext(ContextQuery);
+   const [queryResponsive, setQueryResponsive] = useContext(ContextQueryReponsive);
    const [url, setUrl] = useState(moviesUrl);
    let totalPages;
    let totalResults;
-   let data = useFetchDataSearch(url, currentPage, query);
+   let data = useFetchDataSearch(url, currentPage, query,queryResponsive);
    let movies = []
    let myMovies = []
 
@@ -59,7 +61,7 @@ const SearchPage = ({ imageUrl }) => {
             </Card>
          })
       }
-      if (myMovies.length===0||query===undefined) return showSkeletons();
+      if (myMovies.length===0||(query===undefined&&queryResponsive===undefined)) return showSkeletons();
       return myMovies;
    }
 

@@ -19,7 +19,7 @@
 @media all and (max-width: 768px){
   .logo {
     color: #fff;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 400;
     font-family: $primaryFont;
     margin-right: 20px;
@@ -31,7 +31,12 @@
       font-style: normal;
     }
     .logo__icon{
-     font-size: 20px;
+      font-size: 20px;
+      margin-right: 10px;
+      display: none;
+    }
+    svg{
+      display: none;
     }
   }
 }

@@ -6,7 +6,7 @@ function Logo()
 {
     const style ={}
     return <h1 className="logo">
-           <IoIosFilm className='logo_icon'/>  HAPPY <em>STREAM</em>
+           <IoIosFilm className="logo_icon"/>  HAPPY <em>STREAM</em>
     </h1>
 
 }

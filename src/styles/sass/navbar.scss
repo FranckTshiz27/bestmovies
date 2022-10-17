@@ -55,7 +55,9 @@
   .header__nav__ul_responsive{
     display: none;
   }
-  
+  .toggleSearch__reponsive{
+    display: none;
+  }
 }
 
 .active1 {
@@ -82,13 +84,22 @@
     button {
       border: 0px;
       display: flex;
+      width: 20px;
       background-color: transparent;
       .fa-bars {
         color: #fff;
         font-size: 20px;
       }
     }
-
+    .toggleSearch__reponsive{
+      color: #2ba6cb;
+      font-size: 1em;
+      color: white;
+      cursor:pointer;
+      display: block;
+      // margin-right: 0em;
+    
+    }
     .header__nav__ul {
       z-index: 5;
       width: 100vw;
@@ -131,8 +142,11 @@
             padding: 1px 2em;
             box-sizing: border-box;
           }
+        
         }
+       
       }
+   
     }
 
   
@@ -145,5 +159,6 @@
     padding: 1px 2em;
     box-sizing: border-box;
   }
+ 
 }
  

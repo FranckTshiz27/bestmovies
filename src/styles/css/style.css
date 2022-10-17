@@ -128,7 +128,7 @@ body ::-webkit-scrollbar-track {
 @media all and (max-width: 768px) {
   .logo {
     color: #fff;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 400;
     font-family: "Roboto", sans-serif;
     margin-right: 20px;
@@ -142,6 +142,11 @@ body ::-webkit-scrollbar-track {
   }
   .logo .logo__icon {
     font-size: 20px;
+    margin-right: 10px;
+    display: none;
+  }
+  .logo svg {
+    display: none;
   }
 }
 header {
@@ -159,14 +164,14 @@ header {
 @media all and (max-width: 768px) {
   header {
     display: flex;
-    width: 100%;
-    justify-content: flex-start;
+    width: 100vw;
+    justify-content: space-between;
     align-items: center;
     height: 60px;
-    padding: 0 60px;
+    padding: 0 10px;
     position: fixed;
-    z-index: 10;
-    background-color: rgba(46, 72, 122, 0.8);
+    z-index: 20;
+    background-color: #2e487a;
   }
 }
 .header__nav {
@@ -223,6 +228,9 @@ header {
 .header__nav .header__nav__ul_responsive {
   display: none;
 }
+.header__nav .toggleSearch__reponsive {
+  display: none;
+}
 
 .active1 {
   font-weight: 700;
@@ -250,11 +258,19 @@ header {
   .header__nav button {
     border: 0px;
     display: flex;
+    width: 20px;
     background-color: transparent;
   }
   .header__nav button .fa-bars {
     color: #fff;
     font-size: 20px;
+  }
+  .header__nav .toggleSearch__reponsive {
+    color: #2ba6cb;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    display: block;
   }
   .header__nav .header__nav__ul {
     z-index: 5;
@@ -706,6 +722,27 @@ button.rec-dot:focus {
   height: 50px;
 }
 
+@media screen and (max-width: 768px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #070725;
+  }
+  .footer .footer-droit-auteur-section {
+    width: 260px;
+    line-height: 20px;
+    font-size: 16px;
+    padding-top: 5px;
+  }
+  .footer .img_logo {
+    width: 150px;
+    height: 50px;
+  }
+}
 .movie {
   padding-top: 20px;
   display: flex;
@@ -948,6 +985,282 @@ button.rec-dot:focus {
     display: none;
   }
 }
+.ipFilter_responsive {
+  width: 1000px;
+  display: flex;
+  align-items: center;
+}
+.ipFilter_responsive .ipFilter_responsive__input {
+  margin: 0;
+  width: 100%;
+  border: none;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px 5px;
+  text-align: left;
+  border-radius: 20px;
+}
+.ipFilter_responsive .ipFilter_responsive__input:active {
+  outline: none;
+  border: none;
+}
+.ipFilter_responsive .ipFilter_responsive__input:focus {
+  outline: none;
+  border: none;
+}
+.ipFilter_responsive button {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(60deg, rgba(46, 72, 122, 0.9) 30%, #035275 70%);
+  height: 48px;
+  width: 95px;
+  border-radius: 120px;
+  margin-left: -90px;
+  border: none;
+}
+.ipFilter_responsive button:hover {
+  color: #000;
+}
+.ipFilter_responsive button:focus {
+  color: #000;
+  font-weight: 900;
+  font-size: 15px;
+}
+.ipFilter_responsive:focus {
+  border: 1px solid #fff;
+}
+.ipFilter_responsive:active {
+  outline: none;
+  border: none;
+}
+.ipFilter_responsive:focus {
+  outline: none;
+  border: none;
+}
+
+.ipFilter_responsive-ligth-open {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  border: 0.1px solid rgba(255, 255, 255, 0.6);
+  animation: slidein-open 1s both;
+}
+.ipFilter_responsive-ligth-open .ipFilter_responsive__input {
+  margin: 0;
+  width: 100%;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 1px;
+  text-align: center;
+  border: none;
+}
+.ipFilter_responsive-ligth-open .ipFilter_responsive__input:active {
+  outline: none;
+  border: none;
+}
+.ipFilter_responsive-ligth-open .ipFilter_responsive__input:focus {
+  outline: none;
+  border: none;
+}
+.ipFilter_responsive-ligth-open:active {
+  outline: none;
+  border: none;
+}
+.ipFilter_responsive-ligth-open:focus {
+  outline: none;
+  border: none;
+  border: 0.1px solid rgba(255, 255, 255, 0.6);
+}
+
+.ipFilter_responsive-ligth-close {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  border: 0.1px solid rgba(255, 255, 255, 0.6);
+  animation: slidein-close 1s both;
+}
+.ipFilter_responsive-ligth-close .ipFilter_responsive__input {
+  margin: 0;
+  width: 100%;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 1px;
+  text-align: left;
+  border: none;
+}
+.ipFilter_responsive-ligth-close .ipFilter_responsive__input:active {
+  outline: none;
+  border: none;
+}
+.ipFilter_responsive-ligth-close .ipFilter_responsive__input:focus {
+  outline: none;
+  border: none;
+}
+.ipFilter_responsive-ligth-close:active {
+  outline: none;
+  border: none;
+}
+.ipFilter_responsive-ligth-close:focus {
+  outline: none;
+  border: none;
+  border: 0.1px solid rgba(255, 255, 255, 0.6);
+}
+
+@keyframes slidein-open {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 150px;
+  }
+}
+@keyframes slidein-close {
+  from {
+    width: 150px;
+    border: 0.1px solid rgba(255, 255, 255, 0.6);
+  }
+  to {
+    width: 0px;
+    padding: 0px;
+    border: 0px solid rgba(255, 255, 255, 0.2);
+  }
+}
+@media screen and (max-width: 768px) {
+  .ipFilter_responsive {
+    width: 100px;
+    display: flex;
+    align-items: center;
+  }
+  .ipFilter_responsive .ipFilter_responsive__input {
+    margin: 0;
+    width: 100%;
+    border: none;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 12px 5px;
+    text-align: left;
+    border-radius: 20px;
+  }
+  .ipFilter_responsive .ipFilter_responsive__input:active {
+    outline: none;
+    border: none;
+  }
+  .ipFilter_responsive .ipFilter_responsive__input:focus {
+    outline: none;
+    border: none;
+  }
+  .ipFilter_responsive button {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(60deg, rgba(46, 72, 122, 0.9) 30%, #035275 70%);
+    height: 48px;
+    width: 95px;
+    border-radius: 120px;
+    margin-left: -90px;
+    border: none;
+  }
+  .ipFilter_responsive button:hover {
+    color: #000;
+  }
+  .ipFilter_responsive button:focus {
+    color: #000;
+    font-weight: 900;
+    font-size: 15px;
+  }
+  .ipFilter_responsive:focus {
+    border: 1px solid #fff;
+  }
+  .ipFilter_responsive:active {
+    outline: none;
+    border: none;
+  }
+  .ipFilter_responsive:focus {
+    outline: none;
+    border: none;
+  }
+  .ipFilter_responsive-ligth-open {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border: 0.1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20em;
+    animation: slidein-open 1s both;
+  }
+  .ipFilter_responsive-ligth-open .ipFilter_responsive__input {
+    margin: 0;
+    width: 100%;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 1px;
+    text-align: center;
+    border: none;
+  }
+  .ipFilter_responsive-ligth-open .ipFilter_responsive__input:active {
+    outline: none;
+    border: none;
+  }
+  .ipFilter_responsive-ligth-open .ipFilter_responsive__input:focus {
+    outline: none;
+    border: none;
+  }
+  .ipFilter_responsive-ligth-open:active {
+    outline: none;
+    border: none;
+  }
+  .ipFilter_responsive-ligth-open:focus {
+    outline: none;
+    border: none;
+    border: 0.1px solid rgba(255, 255, 255, 0.6);
+  }
+  .ipFilter_responsive-ligth-close {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border: 0.1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20em;
+    animation: slidein-close 1s both;
+  }
+  .ipFilter_responsive-ligth-close .ipFilter_responsive__input {
+    margin: 0;
+    width: 100%;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 1px;
+    text-align: left;
+    border: none;
+  }
+  .ipFilter_responsive-ligth-close .ipFilter_responsive__input:active {
+    outline: none;
+    border: none;
+  }
+  .ipFilter_responsive-ligth-close .ipFilter_responsive__input:focus {
+    outline: none;
+    border: none;
+  }
+  .ipFilter_responsive-ligth-close:active {
+    outline: none;
+    border: none;
+  }
+  .ipFilter_responsive-ligth-close:focus {
+    outline: none;
+    border: none;
+    border: 0.1px solid rgba(255, 255, 255, 0.6);
+  }
+}
 .searchPage {
   padding: 1%;
   width: 100%;
@@ -978,6 +1291,38 @@ button.rec-dot:focus {
   padding: 10px 100px 20px;
 }
 
+@media screen and (max-width: 768px) {
+  .searchPage {
+    padding: 1%;
+    padding-top: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, rgb(14, 26, 51) 11%, rgba(14, 25, 48, 0.7685324618) 45%, rgba(7, 13, 24, 0.253) 95%), center center;
+  }
+  .searchPage .searchPage__banner {
+    background-color: transparent;
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .searchPage .searchPage__banner .searchPage__banner__results-description {
+    width: 100%;
+    padding: 5px;
+  }
+  .searchPage .movies__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px;
+    width: 100%;
+    padding: 10px 100px 20px;
+  }
+}
 .serial {
   padding-top: 20px;
   display: flex;
@@ -1181,9 +1526,7 @@ button.rec-dot:focus {
     align-items: center;
     flex-direction: column;
     font-family: "Roboto", sans-serif;
-    min-height: 100vh;
     width: 100vw;
-    margin-bottom: 0;
     position: relative;
     background: linear-gradient(90deg, rgb(14, 26, 51) 11%, rgba(14, 25, 48, 0.7685324618) 45%, rgba(7, 13, 24, 0.253) 95%), center center;
   }
@@ -1197,7 +1540,10 @@ button.rec-dot:focus {
     align-items: center;
     z-index: 10;
     padding-top: 2em;
+    padding-bottom: 0;
     text-align: center;
+    justify-content: space-between;
+    box-sizing: border-box;
   }
   .detail .detail__container .detail__container__first {
     width: 100%;
@@ -1227,6 +1573,8 @@ button.rec-dot:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 95vh;
+    position: absolute;
   }
   .detail .detail__container .detail__container__first .image__container .detail__container__first__description__action__container .play {
     font-size: 3em;
@@ -1273,7 +1621,6 @@ button.rec-dot:focus {
   }
   .detail .detail__container .detail__container__second {
     width: 100vw;
-    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

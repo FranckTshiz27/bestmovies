@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { ContextQuery } from "../context/ContextQuery";
+import { ContextQueryReponsive } from "../context/ContextQueryResponsive";
 
 export const useFetchData = (url, currentPage, genre) => {
   const [data, setData] = useState();
@@ -33,27 +33,23 @@ export const useFetchData = (url, currentPage, genre) => {
   return data;
 };
 
-export const useFetchDataSearch = (url, currentPage, query,queryResponsive) => {
+export const useFetchDataSearch = (url, currentPage, query) => {
   const [data, setData] = useState();
 
   const getMovies = async () => {
-    const newUrl = getUrl(url, query, currentPage,queryResponsive);
+    const newUrl = getUrl(url, query, currentPage);
     const response = await fetch(newUrl);
     const data = await response.json();
     setData(data);
   };
 
-  const getUrl = (url, query, currentPage,queryResponsive) => {
-
-    if (query) 
-    return `${url}&page=${currentPage}&query=${query}`
-
-    return `${url}&page=${currentPage}&query=${queryResponsive}`;
+  const getUrl = (url, query, currentPage) => {
+    return `${url}&page=${currentPage}&query=${query}`;
   };
 
   useEffect(() => {
     getMovies();
-  }, [currentPage, url, query,queryResponsive]);
+  }, [currentPage, url, query]);
 
   return data;
 };
@@ -85,30 +81,34 @@ export const useFetchDataByGender = (url, currentPage, gender) => {
   useEffect(() => {}, [url, gender]);
 };
 
-export const useInputFilterLight = (isSearching, isStart) => {
-  const [searchBarStyle, setSearchBarStyle] = useState("null");
-  const [search, setSearch] = useContext(ContextQuery);
+export const useInputFilterLightResponsive= (isSearching, isStart) => {
 
+  const [searchBarStyle, setSearchBarStyle] = useState("null");
+ 
+  const [search, setSearch] = useContext(ContextQueryReponsive);
+ 
   const handleChange = (e) => {
     let filter = e.target.value;
+    console.log(" ghhhhhhhhhhhhhhhhhhhhhhh ghgggggggggggggggggggggggggggggg ",filter);
     setSearch(filter);
   };
-
+ 
   const history = useHistory();
-
+  
   const toggle = () => {
     if (isSearching) {
-      setSearchBarStyle("ipFilter-ligth-open");
+      setSearchBarStyle("ipFilter_responsive-ligth-open");
     } else {
-      setSearchBarStyle("ipFilter-ligth-close");
+      setSearchBarStyle("ipFilter_responsive-ligth-close");
     }
   };
+
   useEffect(() => {
     toggle();
-
+   
     return history.listen((location) => {
       if (location.pathname !== "/search") {
-        setSearchBarStyle("ipFilter-ligth-close");
+        setSearchBarStyle("ipFilter_responsive-ligth-close");
       }
     });
   }, [history, isSearching]);
@@ -121,7 +121,7 @@ export const useInputFilterLight = (isSearching, isStart) => {
     return isStart ? (
       <div className={searchBarStyle}>
         <input
-          className="ipFilter__input"
+          className="ipFilter_responsive__input"
           type="search"
           onChange={handleChange}
           onClick={linkToSearchPage}
@@ -131,6 +131,6 @@ export const useInputFilterLight = (isSearching, isStart) => {
       <div></div>
     );
   };
-  const handleClick = () => {};
+ 
   return <>{showInput()}</>;
 };

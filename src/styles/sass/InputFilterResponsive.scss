@@ -1,0 +1,310 @@
+.ipFilter_responsive {
+  width: 1000px;
+  display: flex;
+  align-items: center;
+
+  .ipFilter_responsive__input {
+    margin: 0;
+    width: 100%;
+    border: none;
+    color: rgba($color: #000, $alpha: 0.8);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 12px 5px;
+    text-align: left;
+    border-radius: 20px;
+    &:active {
+      outline: none;
+      border: none;
+    }
+    &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+
+  button {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(
+      60deg,
+      rgba($primaryColor, 0.9) 30%,
+      rgba(#035275, 1) 70%
+    );
+    height: 48px;
+    width: 95px;
+    border-radius: 120px;
+    margin-left: -90px;
+    border: none;
+    &:hover {
+      color: #000;
+    }
+    &:focus {
+      color: #000;
+      font-weight: 900;
+      font-size: 15px;
+    }
+  }
+
+  
+  &:focus {
+    border: 1px solid #fff;
+  }
+  &:active {
+    outline: none;
+    border: none;
+
+  }
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+.ipFilter_responsive-ligth-open {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  border: 0.1px solid rgba($color: #fff, $alpha: 0.6);
+
+  .ipFilter_responsive__input {
+    margin: 0;
+    width: 100%;
+    background-color: transparent;
+    color: rgba($color: #fff, $alpha: 0.8);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 1px;
+    text-align: center;
+    border: none;
+    &:active {
+      outline: none;
+      border: none;
+    }
+    &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+
+  &:active {
+    outline: none;
+    border: none;
+  }
+  &:focus {
+    outline: none;
+    border: none;
+    border: 0.1px solid rgba($color: #fff, $alpha: 0.6);
+  }
+
+  animation: slidein-open 1s both;
+}
+
+.ipFilter_responsive-ligth-close {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  border: 0.1px solid rgba($color: #fff, $alpha: 0.6);
+  .ipFilter_responsive__input {
+    margin: 0;
+    width: 100%;
+    background-color: transparent;
+    color: rgba($color: #fff, $alpha: 0.8);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 1px;
+    text-align: left;
+    border: none;
+    &:active {
+      outline: none;
+      border: none;
+    }
+    &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+  &:active {
+    outline: none;
+    border: none;
+  }
+  &:focus {
+    outline: none;
+    border: none;
+    border: 0.1px solid rgba($color: #fff, $alpha: 0.6);
+  }
+
+  animation: slidein-close 1s both;
+}
+
+@keyframes slidein-open {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 150px;
+  }
+}
+
+@keyframes slidein-close {
+  from {
+    width: 150px;
+    border: 0.1px solid rgba($color: #fff, $alpha: 0.6);
+  }
+
+  to {
+    width: 0px;
+    padding: 0px;
+    border: 0px solid rgba($color: #fff, $alpha: 0.2);
+  }
+}
+
+@media screen and (max-width:768px){
+  .ipFilter_responsive {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    
+    .ipFilter_responsive__input {
+    
+      margin: 0;
+      width: 100%;
+      border: none;
+      color: rgba($color: #000, $alpha: 0.8);
+      font-size: 14px;
+      font-weight: 400;
+      padding: 12px 5px;
+      text-align: left;
+      border-radius: 20px;
+      &:active {
+        outline: none;
+        border: none;
+      }
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+  
+    button {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      background: linear-gradient(
+        60deg,
+        rgba($primaryColor, 0.9) 30%,
+        rgba(#035275, 1) 70%
+      );
+      height: 48px;
+      width: 95px;
+      border-radius: 120px;
+      margin-left: -90px;
+      border: none;
+      &:hover {
+        color: #000;
+      }
+      &:focus {
+        color: #000;
+        font-weight: 900;
+        font-size: 15px;
+      }
+    }
+  
+    
+    &:focus {
+      border: 1px solid #fff;
+    }
+    &:active {
+      outline: none;
+      border: none;
+  
+    }
+    &:focus {
+      outline: none;
+      border: none;
+    }
+  }
+  
+  .ipFilter_responsive-ligth-open {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border: 0.1px solid rgba($color: #fff, $alpha: 0.6);
+    // width: 150px !important;
+    border-radius: 20em;
+    .ipFilter_responsive__input {
+      margin: 0;
+      width: 100%;
+      background-color: transparent;
+      color: rgba($color: #fff, $alpha: 0.8);
+      font-size: 14px;
+      font-weight: 400;
+      padding: 1px;
+      text-align: center;
+      border: none;
+      
+      &:active {
+        outline: none;
+        border: none;
+      }
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+  
+    &:active {
+      outline: none;
+      border: none;
+    }
+    &:focus {
+      outline: none;
+      border: none;
+      border: 0.1px solid rgba($color: #fff, $alpha: 0.6);
+    }
+  
+    animation: slidein-open 1s both;
+  }
+  
+  .ipFilter_responsive-ligth-close {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border: 0.1px solid rgba($color: #fff, $alpha: 0.6);
+    border-radius: 20em;
+    .ipFilter_responsive__input {
+      margin: 0;
+      width: 100%;
+      background-color: transparent;
+      color: rgba($color: #fff, $alpha: 0.8);
+      font-size: 14px;
+      font-weight: 400;
+      padding: 1px;
+      text-align: left;
+      border: none;
+      &:active {
+        outline: none;
+        border: none;
+      }
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+    &:active {
+      outline: none;
+      border: none;
+    }
+    &:focus {
+      outline: none;
+      border: none;
+      border: 0.1px solid rgba($color: #fff, $alpha: 0.6);
+    }
+  
+    animation: slidein-close 1s both;
+  }
+}

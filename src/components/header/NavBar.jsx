@@ -4,15 +4,20 @@ import Logo from './Logo';
 import {NavLink} from 'react-router-dom';
 import { FaSistrix } from "react-icons/fa";
 import {useInputFilterLight} from '../../hooks/fetchHooks';
+import {useInputFilterLightResponsive} from '../../hooks/fetchHooksReponsive';
 import {searchContext} from '../../context/SearchContext';
+import {searchContextResponsive} from '../../context/SearchContextResponsive';
 import { useContext } from 'react';
 
 function  NavBar()
 {
   const [start,setStart] = useState(false)
+  const [startResponsive,setStartResponsive] = useState(false)
   const [visibility,setVisibility]= useState(true);
   const [isSearching,setIsSearching]= useContext(searchContext);
+  const [isSearchingResponsive,setIsSearchingResponsive]= useContext(searchContextResponsive);
   const searchBar = useInputFilterLight(isSearching,start)
+  const searchBarResponsive = useInputFilterLightResponsive(isSearchingResponsive,startResponsive)
 
  let className="header__nav__ul";
 
@@ -22,7 +27,11 @@ const handleClick = ()=>{
   if (start===false) 
       setStart(true)
 }
-
+const handleClickResponsive = ()=>{
+  setIsSearchingResponsive(!isSearchingResponsive)
+  if (startResponsive===false) 
+      setStartResponsive(true)
+}
 const onClick = ()=>{
   setIsSearching(false)
  
@@ -68,14 +77,14 @@ const handleVisibile=()=>{
 
    
     return ( 
-    
-
 <div className="header__nav">
              <Logo/>
+             {searchBarResponsive}
+             <FaSistrix className="toggleSearch__reponsive" onClick={handleClickResponsive}/>
            {
            menu() 
            }
-
+           
           {
             btnMenu()
           }

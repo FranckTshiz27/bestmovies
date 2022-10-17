@@ -15,14 +15,14 @@ header {
 @media all and (max-width: 768px) {
   header {
     display: flex;
-    width: 100%;
-    justify-content: flex-start;
+    width: 100vw;
+    justify-content: space-between;
     align-items: center;
     height: 60px;
-    padding: 0 60px;
+    padding: 0 10px;
     position: fixed;
-    z-index: 10;
-    background-color: rgba($color: $primaryColor, $alpha: 0.8);
+    z-index: 20;
+    background-color: rgba($color: $primaryColor, $alpha: 1);
   }
   
   }
